@@ -1,0 +1,29 @@
+-- Define NPC object
+local NPC = {}
+
+-- NPC properties
+NPC.name = "GitHub NPC"
+NPC.dialogue = {
+    "Greetings, traveler!",
+    "Welcome to GitHub Village!",
+    "Feel free to explore our repository!",
+    "If you have any questions, don't hesitate to ask!"
+}
+
+-- Function to greet player
+function NPC:greet()
+    local dialogueIndex = math.random(1, #self.dialogue)
+    print(self.name .. ": " .. self.dialogue[dialogueIndex])
+end
+
+-- Function to interact with player
+function NPC:interact()
+    self:greet()
+    -- Additional interactions can be added here
+end
+
+-- Example usage:
+-- local player = { name = "Player" }
+-- NPC:interact(player)
+
+return NPC
