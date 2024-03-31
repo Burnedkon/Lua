@@ -15,5 +15,20 @@ function rickroll()
     openURL(youtubeLink)
 end
 
--- Rickroll!
-rickroll()
+-- Assuming this is a function that handles touch events on a specific part
+function onTouch(part)
+    -- Check if the touched part is the one you want to trigger the rickroll
+    if part.Name == "RickrollTriggerPart" then
+        -- Rickroll!
+        rickroll()
+    end
+end
+
+-- Example: Suppose there's a part named "RickrollTriggerPart" in the game
+-- You need to set up an event handler for touch events on this part
+-- For example, in Roblox Lua, you can do something like this:
+
+local triggerPart = game.Workspace.RickrollTriggerPart
+
+triggerPart.Touched:Connect(onTouch)
+
